@@ -79,7 +79,7 @@ $subdomain = explode
 	preg_replace('[http://]','',preg_replace('[www.]','',$_SERVER['HTTP_HOST'],1),1)
 )[0];
 		
-$env = (in_array($subdomain,array('kohana','mob'))) ? 'app' : $subdomain;
+$env = (in_array($subdomain,array('pec10'))) ? 'app' : $subdomain;
 
 
 // Define the absolute paths for configured directories
