@@ -1,0 +1,10 @@
+<html>
+    <head>
+        <title>Pec10.lv</title>
+    </head>
+    <body>
+        <center>
+            <h1><?=__($message,'error')?></h1>
+        </center>
+    </body>
+</html>
