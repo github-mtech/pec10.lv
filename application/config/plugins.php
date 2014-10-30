@@ -30,7 +30,26 @@ return array(
             'css'      => array(
                 '/ui-plugins/font-awesome/css/font-awesome.min.css' ,
             )
-        )
+        ),
+        'prettyPhoto' => array(
+            'css'      => array(
+                '/ui-plugins/prettyPhoto/prettyPhoto.css' ,
+            ),
+            'js'      => array(
+                '/ui-plugins/prettyPhoto/jquery.prettyPhoto.js' ,
+            )
+        ),
+        'isotope' => array(
+            'js'      => array(
+                '/ui-plugins/isotope/jquery.isotope.min.js' ,
+            )
+        ),
+         'respond' => array(
+            'js'      => array(
+                '/ui-plugins/respond/respond.min.js' ,
+            )
+        ),
+        
 
     )
 );

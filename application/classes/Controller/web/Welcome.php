@@ -15,12 +15,14 @@ class Controller_Web_Welcome extends Controller_Template  {
 		
 		$plugins = Kohana::$config->load('plugins')->get('plugins');
 		$css	 = array(
+			'/media/css/main.css',
 			'/media/css/base.css',
+			
 			//'lnk22.css',
 		);
 		
 		$js 	= array(
-			//'link11.js',
+			'/media/js/main.js',
 			//'link33.js',
 		);
 		
