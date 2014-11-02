@@ -161,6 +161,6 @@ Route::set('default', '((<lang>)(/)(<controller>)(/<action>(/<id>)))', array('la
 	->defaults(array(
 		'directory'  => 'Web',
 		'lang' => $appConfig['lang']['default'],
-		'controller' => 'welcome',
+		'controller' => 'Home',
 		'action'     => 'index',
 	));

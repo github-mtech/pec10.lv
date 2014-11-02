@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Web_Welcome extends Controller_Template  {
+class Controller_Web_Home extends Controller_Template  {
 
 	public $template = 'web/tmp/html';
 	
@@ -9,7 +9,7 @@ class Controller_Web_Welcome extends Controller_Template  {
 		parent::before();
 		
 		I18n::lang(Request::current()->param('lang'));
-		I18n::init(array('rawr'));
+		I18n::init(array('home'));
 		
 		
 		
@@ -18,12 +18,12 @@ class Controller_Web_Welcome extends Controller_Template  {
 			'/media/css/main.css',
 			'/media/css/base.css',
 			
-			//'lnk22.css',
+		
 		);
 		
 		$js 	= array(
 			'/media/js/main.js',
-			//'link33.js',
+			
 		);
 		
 		
@@ -47,6 +47,7 @@ class Controller_Web_Welcome extends Controller_Template  {
 	public function action_index()
 	{
 		$this->template->content = array(
+			View::factory('web/section/info'),
 			View::factory('web/section/add'),
 			View::factory('web/section/about'),
 			View::factory('web/section/unknown'),

@@ -43,6 +43,7 @@
     <header id="header" role="banner">
         <div class="container">
             <div id="navbar" class="navbar navbar-default">
+               
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -55,7 +56,7 @@
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a class="scrl"  href="#main-slider"><i class="icon-home"></i></a></li>
-                        <li><a class="scrl" href="#services">Informācija</a></li>
+                        
                         <li><a class="scrl" href="#portfolio">Pievieno savu vietu</a></li>
                         <li><a class="scrl" href="#pricing">Par projektu</a></li>
                         <li><a class="scrl" href="#about-us">Reklāmas</a></li>
@@ -66,8 +67,11 @@
         </div>
     </header><!--/#header-->
 
-    <section id="main-slider" class="carousel">
-       asdas
+    <section id="main-slider" class="carousel" style="">
+        <div style=" position:fixed; top:0; width:100%; height:100%;">
+            <div id="map" style="width:100%; height:100%;"></div>
+        </div>
+     
     </section><!--/#main-slider-->
 
     <section id="services">
@@ -456,9 +460,211 @@
         
         ?>
     
-    <script>
+    <script type="text/javascript">
+        var minZoomLevel = 8;
         
         
+        var style = [
+    {
+        "featureType": "administrative",
+        "elementType": "labels",
+        "stylers": [
+            {
+                
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.country",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                
+            }
+        ]
+    },
+    {
+        "featureType": "administrative.province",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#e3e3e3"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "all",
+        "stylers": [
+            {
+                "color": "#cccccc"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels",
+        "stylers": [
+            {
+                
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.line",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station.airport",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit.station.airport",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#FFFFFF"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    }
+];
+
+   var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      minZoom: 5,
+      center: new google.maps.LatLng(56.97,24.12),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: style,
+      disableDefaultUI: true
+   });
+
+   // Bounds for North America
+   var strictBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(56.29, 20.98),
+        new google.maps.LatLng(58.08, 28.23)
+    
+   );
+
+   // Listen for the dragend event
+   google.maps.event.addListener(map, 'dragend', function() {
+     if (strictBounds.contains(map.getCenter())) return;
+
+     // We're out of bounds - Move the map back within the bounds
+
+     var c = map.getCenter(),
+         x = c.lng(),
+         y = c.lat(),
+         maxX = strictBounds.getNorthEast().lng(),
+         maxY = strictBounds.getNorthEast().lat(),
+         minX = strictBounds.getSouthWest().lng(),
+         minY = strictBounds.getSouthWest().lat();
+
+     if (x < minX) x = minX;
+     if (x > maxX) x = maxX;
+     if (y < minY) y = minY;
+     if (y > maxY) y = maxY;
+
+     map.setCenter(new google.maps.LatLng(y, x));
+   });
+
+   // Limit the zoom level
+   google.maps.event.addListener(map, 'zoom_changed', function() {
+     if (map.getZoom() < minZoomLevel) map.setZoom(minZoomLevel);
+   });
+
+        
+        
+        
+        
+        
+        /*
+        function initialize() {
+            var mapOptions = {
+              center: { lat: -34.397, lng: 150.644},
+                zoom: 8,
+               disableDefaultUI: true
+            };
+            var map = new google.maps.Map(document.getElementById('map'),
+                mapOptions);
+        }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      */ 
     </script>
     </div>
     
