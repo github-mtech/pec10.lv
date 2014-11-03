@@ -213,6 +213,7 @@ a:focus {
 }
 .box.last {
   border-radius: 0 0 5px 5px;
+  min-height: 800px;
 }
 .box h2 {
   padding: 10px 30px;

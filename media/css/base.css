@@ -1,0 +1,249 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+/**** Google map hide controll ****/
+
+a[href^="http://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span {
+    display:none;
+}
+.gmnoprint div {
+    background:none !important;
+}
+
+/**** GLOBAL ****/
+
+/**** Google map hide controll ****/
+
+html,body
+{
+  height:100%;
+}
+body {
+  background: #e5e5e5;
+  color: #999;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #777;
+  font-weight: 300;
+}
+a {
+  color: #52b6ec;
+  -webkit-transition: 300ms;
+  -moz-transition: 300ms;
+  -o-transition: 300ms;
+  transition: 300ms;
+}
+
+.center
+{
+	text-align: center;
+}
+
+/**** HEADER  ****/
+
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 99999;
+}
+
+
+/**** SMALL MENU   ****/
+
+@media (max-width: 992px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+  		display:block !important;
+	}
+}
+
+
+/**** DEFAULT MENU   ****/
+
+.navbar-default {
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  border: 0;
+  padding: 0;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+  overflow: hidden;
+}
+.navbar-default .first a {
+  border-radius: 0 0 0 5px;
+}
+.navbar-default .navbar-brand {
+  
+  margin-left: 20px;
+  width: 200px;
+  height: 43px;
+  background: url(/media/img/logo.png) no-repeat 0 50%;
+}
+.navbar-default .navbar-nav > li {
+  margin-left: 1px;
+}
+.navbar-default .navbar-nav > li > a {
+  
+  line-height: 18px;
+  color: #999;
+}
+.navbar-default .navbar-nav > li > a > i {
+  display: inline-block;
+}
+.navbar-default .navbar-nav > li.active > a,
+.navbar-default .navbar-nav > li.active:focus > a,
+.navbar-default .navbar-nav > li.active:hover > a,
+.navbar-default .navbar-nav > li:hover > a,
+.navbar-default .navbar-nav > li:focus > a,
+.navbar-default .navbar-nav > li.active > a:focus,
+.navbar-default .navbar-nav > li.active:focus > a:focus,
+.navbar-default .navbar-nav > li.active:hover > a:focus,
+.navbar-default .navbar-nav > li:hover > a:focus,
+.navbar-default .navbar-nav > li:focus > a:focus {
+  background-color: #52b6ec;
+  color: #fff;
+}
+
+
+
+/**** DEFAULT MAP-SECTION   ****/
+
+#map-section
+{
+	
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	height:100%;
+	color: #fff;
+}
+
+/**** DEFAULT SECTION   ****/
+
+.box {
+  padding: 50px 30px;
+  background: #fff;
+  border-bottom: 1px solid #e9e9e9;
+  position: relative;
+  min-height:600px;
+}
+.box.first {
+  margin-top: -140px;
+  border-radius: 5px 5px 0 0;
+  min-height:200px;
+}
+.box.last {
+  border-radius: 0 0 5px 5px;
+  min-height: 700px;
+}
+.box h2 {
+  padding: 10px 30px;
+  display: inline-block;
+  border-radius: 4px;
+  position: relative;
+  margin-bottom: 30px;
+  font-size: 48px;
+}
+
+
+
+/**** INFO SECTION   ****/
+
+#steps
+{
+	margin-top:-120px;
+}
+
+#steps .center
+{
+	margin-bottom:20px;
+}
+
+#steps .item
+{
+	text-align: justify;
+}
+
+#steps h4
+{
+	text-align: center;
+}
+
+
+#steps a:hover i
+{
+	border:#2a6496 solid 4px;
+	color:#2a6496;
+	-webkit-transition: 300ms;
+	-moz-transition: 300ms;
+	-o-transition: 300ms;
+	transition: 300ms;
+}
+
+#steps i
+{
+	
+	font-size: 30px;
+	border-radius:50%;
+	border:#eee solid 4px;
+	padding:60px;
+	background:#fff;
+}
+
+/**** SMALL INFO SECTION   ****/
+
+
+@media (max-width: 993px) {
+ 
+	#steps
+	{
+		margin-top:-120px;
+	}
+	
+	#steps i
+	{
+		
+		padding:50px;
+	}
+	
+}
+

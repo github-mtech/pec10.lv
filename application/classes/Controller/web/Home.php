@@ -15,7 +15,7 @@ class Controller_Web_Home extends Controller_Template  {
 		
 		$plugins = Kohana::$config->load('plugins')->get('plugins');
 		$css	 = array(
-			'/media/css/main.css',
+			//'/media/css/main.css',
 			'/media/css/base.css',
 			
 		
@@ -47,10 +47,11 @@ class Controller_Web_Home extends Controller_Template  {
 	public function action_index()
 	{
 		$this->template->content = array(
+			View::factory('web/section/promotion'),
 			View::factory('web/section/info'),
 			View::factory('web/section/add'),
-			View::factory('web/section/about'),
-			View::factory('web/section/unknown'),
+			View::factory('web/section/contacts'),
+			//View::factory('web/section/unknown'),
 		);
 	}
 	

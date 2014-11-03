@@ -3,6 +3,7 @@
         <div class="container">
             <div class="box first">
                 <div class="row">
+                    
                     <div class="col-md-4 col-sm-6">
                         <div class="center">
                             <i class="icon-apple icon-md icon-color1"></i>

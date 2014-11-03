@@ -40,6 +40,7 @@
 
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="0">
+    
     <header id="header" role="banner">
         <div class="container">
             <div id="navbar" class="navbar navbar-default">
@@ -51,23 +52,22 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand scrl" href="#main-slider"></a>
+                    <a class="navbar-brand scrl" href="#map-section"></a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a class="scrl"  href="#main-slider"><i class="icon-home"></i></a></li>
+                        <li class="active"><a class="scrl"  href="#map-section"><i class="icon-home"></i></a></li>
                         
-                        <li><a class="scrl" href="#add">Pievieno savu vietu</a></li>
-                        <li><a class="scrl" href="#pricing">Par projektu</a></li>
-                        <li><a class="scrl" href="#about-us">Reklāmas</a></li>
-                        <li><a class="scrl" href="#contact">Kontakti</a></li>
+                        <li><a class="scrl" href="#info">Informācija</a></li>
+                        <li><a class="scrl" href="#add">Pievienot savu vietu</a></li>
+                        <li><a class="scrl" href="#contacts">Kontakti</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header><!--/#header-->
 
-    <section id="main-slider" class="carousel" style="">
+    <section id="map-section" class="carousel" style="">
         <div style=" position:fixed; top:0; width:100%; height:100%;">
             <div id="map" style="width:100%; height:100%;"></div>
         </div>
@@ -267,7 +267,7 @@
       minZoom: 5,
       center: new google.maps.LatLng(56.97,24.12),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      styles: style,
+      
       disableDefaultUI: true
    });
 
